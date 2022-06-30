@@ -35,6 +35,7 @@ export const App = () => (
                 <button className="edit-todo">✎</button>
                 <button className="remove-todo">Ⅹ</button>
             </div>
+            <button className="delete-list">Delete ALL</button>
         </div>
 
     </div>

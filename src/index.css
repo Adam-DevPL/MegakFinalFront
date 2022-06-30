@@ -185,3 +185,19 @@ form {
     color: #252525a4;
 }
 
+.delete-list {
+    margin-top: 50px;
+    height: 50px;
+    font-size: 1.0rem;
+    color: red;
+    border: 1px solid red;
+    background: transparent;
+    padding: 0 15px;
+    cursor: pointer;
+    transition: border 250ms ease-in;
+}
+
+.delete-list:hover {
+    border: 3px solid red;
+}
+
