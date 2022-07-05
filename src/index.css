@@ -34,6 +34,7 @@ body {
     line-height: 1.7;
     list-style: circle;
     padding-left: 1.1em;
+    cursor: pointer;
 }
 
 form {
@@ -199,5 +200,9 @@ form {
 
 .delete-list:hover {
     border: 3px solid red;
+}
+
+.edited-task {
+   border: 2px solid red;
 }
 
