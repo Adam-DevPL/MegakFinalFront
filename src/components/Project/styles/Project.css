@@ -1,0 +1,11 @@
+.projects {
+    grid-area: lists;
+    height: 100vh;
+    background-color: var(--project-color);
+    padding-left: 20px;
+    padding-top: 50px;
+}
+
+.projects__title {
+
+}
