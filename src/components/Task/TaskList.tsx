@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {TaskEntity} from 'types';
 import {SingleTask} from "./SingleTask";
 import {DeleteItem} from "../Popup/DeleteItem";
+import {DeleteBtn} from "../Button/DeleteBtn";
 
 interface Props {
     tasks: TaskEntity[];
@@ -15,12 +16,22 @@ export const TaskList = (props: Props) => {
 
     return (
         <>
-            {props.tasks && props.tasks.filter(task => task.projectId === props.selectedProject).map(ele => (
-                <SingleTask key={ele.id} name={ele.taskName} completed={ele.completed} id={ele.id}
-                            projectId={ele.projectId}
-                            refresh={props.refresh}/>
-            ))}
-            <button className="delete-list" onClick={() => setShopPopUp(true)}>Delete ALL</button>
+            {props.tasks && props.tasks
+                .filter(task => task.projectId === props.selectedProject).map(ele => (
+                    <SingleTask
+                        key={ele.id}
+                        name={ele.taskName}
+                        completed={ele.completed}
+                        id={ele.id}
+                        projectId={ele.projectId}
+                        refresh={props.refresh}
+                    />
+                ))}
+            <DeleteBtn
+                setShopPopup={setShopPopUp}
+            >
+                Delete All
+            </DeleteBtn>
             {showPopup &&
                 <DeleteItem
                     text="Delete project"

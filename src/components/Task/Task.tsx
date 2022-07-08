@@ -5,6 +5,9 @@ import {TaskEntity} from 'types';
 import {TaskList} from "./TaskList";
 import {AddTask} from "../AddTask/AddTask";
 
+import "./styles/Task.css";
+import {ErrorPopup} from "../Popup/ErrorPopup";
+
 
 export const Task = () => {
     const [tasksList, setTasksList] = useState<TaskEntity[] | null>(null)
@@ -16,8 +19,7 @@ export const Task = () => {
     const refreshGifts = async () => {
 
         setIsLoading(true);
-        const tasksTest = await FetchDataApi.getData('/task');
-        // console.log(tasksTest.data.tasks);
+        const tasksTest = await FetchDataApi.getData('/tasks');
         setIsLoading(false);
 
         if (tasksTest.errorMsg !== "") {
@@ -38,12 +40,12 @@ export const Task = () => {
 
 
     return (
-        <div className="todo-list">
-            <h2 className="todo-header">To Do</h2>
+        <div className="tasks">
+            <h2 className="tasks__title">To Do</h2>
             {projectId &&
             <AddTask projectId={projectId} refresh={refreshGifts}/>}
             {isLoading && <h2>Loading...</h2>}
-            {!isLoading && (errorMsg !== "") ? (<p>{errorMsg}</p>) :
+            {!isLoading && (errorMsg !== "") ? (<ErrorPopup errorMsg={errorMsg} />) :
                 (
                     tasksList !== null &&
                     <TaskList tasks={tasksList} selectedProject={projectId} refresh={refreshGifts}/>

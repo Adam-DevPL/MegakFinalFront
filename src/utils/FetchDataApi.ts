@@ -35,13 +35,14 @@ export class FetchDataApi {
         try {
             const res = await fetch(url, init);
             if ([400, 404, 500].includes(res.status)) {
-                throw new Error(`Error code: ${res.status}, which means: ${res.statusText}.`);
+                // throw new Error(`Error code: ${res.status}, which means: ${res.statusText}.`);
+                errorMsg = res.statusText;
             }
             if (method !== "DELETE") {
                 data = await res?.json();
             }
         } catch ({message}) {
-            if (message === "unknown") {errorMsg = "";} else {errorMsg = `${message}`;}
+            // if (message === "unknown") {errorMsg = "";} else {errorMsg = `${message}`;}
         }
         return {
             data,

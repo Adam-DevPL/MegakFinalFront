@@ -4,6 +4,7 @@ import {AddProject} from "../AddProject/AddProject";
 import {AppContext} from "../../views/HomeView";
 
 import "./styles/Project.css";
+import {ErrorPopup} from "../Popup/ErrorPopup";
 
 export const Project = () => {
 
@@ -22,7 +23,7 @@ export const Project = () => {
         <div className="projects">
             <h2 className="projects__title">Projects</h2>
             {isLoading && <h2>Loading...</h2>}
-            {!isLoading && (errorMsg !== "") ? (<p>{errorMsg}</p>) :
+            {!isLoading && (errorMsg !== "") ? (<ErrorPopup errorMsg={errorMsg} />) :
                 (
                     lists !== null && <ProjectList projects={lists}/>
                 )}

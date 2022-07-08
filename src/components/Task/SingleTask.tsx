@@ -4,6 +4,8 @@ import {FetchDataApi} from "../../utils/FetchDataApi";
 import {EditPopup} from "../Popup/EditPopup";
 import {DeleteItem} from "../Popup/DeleteItem";
 
+import "./styles/SingleTask.css";
+
 interface Props {
     id: string;
     name: string;
@@ -20,7 +22,6 @@ export const SingleTask = (props: Props) => {
 
 
     const updateTaskCompleted = async (str: boolean) => {
-        console.log(str);
         setCompletedTask(() => str);
         await updateTask();
     };
@@ -33,7 +34,7 @@ export const SingleTask = (props: Props) => {
     };
 
     return (
-        <div className="todo-container">
+        <div className="task-container">
             <input
                 type="checkbox"
                 className="check-box"

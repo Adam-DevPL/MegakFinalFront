@@ -2,6 +2,8 @@ import React, {FormEvent, useState} from 'react';
 import {NewTaskEntity} from 'types';
 import {FetchDataApi} from "../../utils/FetchDataApi";
 
+import "./AddTask.css";
+
 interface Props {
     projectId: string;
     refresh: () => void;
@@ -50,7 +52,7 @@ export const AddTask = (props: Props) => {
             <input
                 type="text"
                 className="input"
-                placeholder='SingleTask to be done...'
+                placeholder='Task to be done...'
                 value={form.taskName}
                 onChange={e => updateForm(e.target.value)}
             />

@@ -2,6 +2,8 @@ import React, {useContext} from 'react';
 import {FetchDataApi} from "../../utils/FetchDataApi";
 import {AppContext} from "../../views/HomeView";
 
+import "./DeleteItem.css";
+
 interface Props {
     text: string;
     itemId: string;

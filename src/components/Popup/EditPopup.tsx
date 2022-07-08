@@ -1,6 +1,8 @@
 import React, {FormEvent, useState} from 'react';
 import {FetchDataApi} from "../../utils/FetchDataApi";
 
+import "./EditPopup.css";
+
 interface Props {
     idOfElementToDelete: string;
     taskName: string;
@@ -40,7 +42,7 @@ export const EditPopup = (props: Props) => {
                     <input
                         type="text"
                         className="input"
-                        placeholder='SingleTask to be done...'
+                        placeholder='New name for task...'
                         value={name}
                         onChange={e => updateForm(e.target.value)}
                     />
