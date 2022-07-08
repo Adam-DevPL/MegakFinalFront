@@ -1,0 +1,31 @@
+.form-container {
+    display: flex;
+    align-items: center;
+    width: 850px;
+    height: 40px;
+    margin-bottom: 15px;
+}
+
+.input {
+    flex-grow: 1;
+    height: inherit;
+    outline: none;
+    border: 1px solid #D6C9C9;
+    border-top-left-radius: 5px;
+    font-size: 1.1rem;
+    padding-left: 5px;
+    box-shadow: 0 2px 35px 6px rgba(214, 200, 201, 0.3);
+}
+.submit-btn {
+    font-size: 1.1rem;
+    font-weight: bold;
+    width: 100px;
+    height: inherit;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background-color: #D6C9C9;
+    color: white;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}

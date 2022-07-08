@@ -1,0 +1,39 @@
+.task-container {
+    width: 850px;
+    height: 40px;
+    padding: 5px;
+    margin: 5px 0;
+    border-radius: 5px;
+    border: 2px solid var(--project-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.check-box {
+    cursor: pointer;
+    font-size: 1.1rem;
+    outline: none;
+}
+
+.task-text {
+    flex-grow: 1;
+    padding: 0 10px;
+    font-size: 0.9rem;
+}
+
+.line-through {
+    text-decoration: line-through;
+}
+
+.edit-todo,
+.remove-todo {
+    outline: none;
+    border: none;
+    background: transparent;
+    color: #D6C9C9;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0 10px;
+}

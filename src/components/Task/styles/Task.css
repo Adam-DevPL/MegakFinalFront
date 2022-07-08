@@ -1,0 +1,13 @@
+.tasks {
+    grid-area: tasks;
+    height: 100vh;
+    background-color: var(--task-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+}
+
+.tasks__title {
+
+}
