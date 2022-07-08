@@ -10,6 +10,7 @@ interface Props {
 
 export const AddProject = (props: Props) => {
     const [projectName, setProjectName] = useState<string>("");
+    const [createdAt, setCreatedDate] = useState<Date>();
 
     const [loading, setLoading] = useState<boolean>(false);
 
@@ -20,8 +21,10 @@ export const AddProject = (props: Props) => {
         setLoading(true);
 
         try {
+            setCreatedDate(new Date());
             await FetchDataApi.postData<NewProjectEntity>("/project", {
                 projectName,
+                createdAt,
             });
         } finally {
             setLoading(false);

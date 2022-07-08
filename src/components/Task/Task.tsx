@@ -19,7 +19,7 @@ export const Task = () => {
     const refreshGifts = async () => {
 
         setIsLoading(true);
-        const tasksTest = await FetchDataApi.getData('/tasks');
+        const tasksTest = await FetchDataApi.getData('/task');
         setIsLoading(false);
 
         if (tasksTest.errorMsg !== "") {

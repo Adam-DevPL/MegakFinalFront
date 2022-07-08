@@ -7,6 +7,7 @@ interface Props {
     id: string;
     selectProject: (id: string) => void;
     selectedId: string;
+    createdAt: Date | undefined;
 }
 
 export const SingleItem = (props: Props) => {

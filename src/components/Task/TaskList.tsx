@@ -17,7 +17,13 @@ export const TaskList = (props: Props) => {
     return (
         <>
             {props.tasks && props.tasks
-                .filter(task => task.projectId === props.selectedProject).map(ele => (
+                .filter(task => task.projectId === props.selectedProject)
+                .sort((a, b) => {
+                    const date1 = new Date(a.createdAt as Date);
+                    const date2 = new Date(b.createdAt as Date);
+                    return Number(date1) - Number(date2);
+                })
+                .map(ele => (
                     <SingleTask
                         key={ele.id}
                         name={ele.taskName}
