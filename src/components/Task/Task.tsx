@@ -16,7 +16,7 @@ export const Task = () => {
 
     const context = useContext(AppContext);
 
-    const refreshGifts = async () => {
+    const refreshTasks = async () => {
 
         setIsLoading(true);
         const tasksTest = await FetchDataApi.getData('/task');
@@ -31,7 +31,7 @@ export const Task = () => {
     };
 
     useEffect(() => {
-        refreshGifts();
+        refreshTasks();
     }, []);
 
     if (!context) return null;
@@ -43,12 +43,12 @@ export const Task = () => {
         <div className="tasks">
             <h2 className="tasks__title">To Do</h2>
             {projectId &&
-            <AddTask projectId={projectId} refresh={refreshGifts}/>}
+            <AddTask projectId={projectId} refresh={refreshTasks}/>}
             {isLoading && <h2>Loading...</h2>}
             {!isLoading && (errorMsg !== "") ? (<ErrorPopup errorMsg={errorMsg} />) :
                 (
                     tasksList !== null &&
-                    <TaskList tasks={tasksList} selectedProject={projectId} refresh={refreshGifts}/>
+                    <TaskList tasks={tasksList} selectedProject={projectId} refresh={refreshTasks}/>
                 )}
         </div>
     );

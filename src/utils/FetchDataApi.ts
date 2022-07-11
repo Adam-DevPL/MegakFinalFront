@@ -13,7 +13,7 @@ interface FetchResp {
 
 export class FetchDataApi {
 
-    private static readonly url = "http://localhost:3001";
+    private static readonly url = process.env.REACT_APP_API_URL ?? "http://localhost:3001";
 
     private static async request<T>(url: string, method: MethodRequest = "GET", dataPost: T | null = null): Promise<FetchResp> {
         let errorMsg = "";

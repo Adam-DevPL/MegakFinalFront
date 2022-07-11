@@ -13,7 +13,7 @@ export interface Resp {
     errorMsg: string;
 }
 
-const URL = "http://localhost:3001";
+const URL = process.env.REACT_APP_API_URL ?? "http://localhost:3001";
 
 
 export const useFetch = (props: Props): Resp => {
