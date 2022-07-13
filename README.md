@@ -4,6 +4,8 @@ Simple lists of todos is a basic application to manage several lists with things
 It's example made for testing programming skills. 
 This part contains fronted side of app.
 
+To see fronted part of application click --> [BACKEND](https://github.com/Adam-DevPL/MegakFinalBack).
+
 ## Table of contents
 * [Technologies](#technologies)
 * [Installation](#installation)
