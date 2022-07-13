@@ -1,4 +1,4 @@
-# Simple "lists" of to-do's
+# Simple "lists" of to-dos
 
 Simple lists of todos is a basic application to manage several lists with things to do, so we don't have keep everything in one todo list. 
 It's example made for testing programming skills. 
